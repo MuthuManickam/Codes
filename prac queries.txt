@@ -1,0 +1,56 @@
+CREATE TABLE CUSTOMERS1
+(CUST_ID NUMBER(4) PRIMARY KEY,
+  NAME VARCHAR(20) NOT NULL,
+ ADDRESS VARCHAR(30) NOT NULL,
+ GENDER CHAR,
+ DOB DATE,
+ EMAIL_ID VARCHAR(15),
+ PHONE NUMBER(10));
+---------------
+INSERT INTO CUSTOMERS1 VALUES (1001, 'Aishwarya', 'Chennai, Tamil Nadu', 'F', '13-   JUN-96', 'MA00561024@TM.com', 9785868612);
+---------------
+insert into customers1 values('1004','Abi','chennai','F','05-dec-95','abi@TM.com',4674747246);
+---------------
+select cust_id, name from customers1;
+----------------
+select cust_id,gender from customers1 order by cust_id;
+---------------- 
+select cust_id,name,gender from customers1 where name = 'Sruthi';
+-----------------
+select * from customers1 where cust_id <= 1002;
+---------------
+select cust_id, name from customers1;
+--------------
+select cust_id,gender from customers1 order by cust_id;
+--------------
+select * from customers1 where name like 'A%';
+----------------
+desc products;
+------------------
+insert into products values(0001, 'food', 'chips','1', 10, 100);
+insert into products values(0002, 'clothing', 'sweater','2', 700,5);
+insert into products values(0003, 'food', 'Green tea','1', 15 , 78);
+insert into products values(4,'electronic','Charger',1,50, 10);
+--------------------
+select description from products where description like 'G%';
+--------------------
+ select round(46.78) from dual;
+select 5 + 10 from dual;
+select round(48.964, -1) from dual;
+select round(42.975,-1) from dual;
+----------------------
+ select 'DOB of '||NAME||' is '||DOB from customers1;
+---------------------
+select NAME, SUBSTR(NAME,2,4) from customers1;
+-----------------------
+select add_months(sysdate,3) from dual;
+ select months_between(sysdate,'10-jul-18') from dual;
+select months_between(sysdate,'10-jan-18') from dual;
+-----------------------
+select to_char(sysdate,'DY, DDth month yyyy') from dual;
+select to_char(sysdate,'DY, DDth mm yyyy') from dual;
+ select to_char(sysdate,'DY, DDth mm year') from dual;
+select to_char(sysdate, 'hh:mi:ss') from dual;
+-------------------------
+select product_id,category,decode(category,'food','F','clothing','C','Nil') as Catcode from products;
+-------------------------

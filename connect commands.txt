@@ -1,0 +1,5 @@
+conn hr/hr
+--> connected
+conn system/root123
+alter user hr identified by hr account unlock;
+conn hr/hr
